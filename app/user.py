@@ -47,15 +47,26 @@ def sign_in():
             )
         )
 
-def update_user():
-    user = user.query.get(id)
-    if request.method == 'POST':
+def update_user(id):
+    user = User.query.get(id)
+    if request.method == 'PATH':
         name = request.json['Name']
         email = request.json['Email']
         password = request.json['Password']
-
-        new_user = User(name, email, password) # lưu vào db
+        new_user = User(user,name, email, password)
         db.session.add(new_user)
+        db.session.commit()
+    return (
+        json.dumps(
+            {
+                "message": "update thanh cong"
+            }
+        )
+    )
+def delete_user(id):
+    user = User.query.get(id)
+    if request.method == 'DELETE':
+        db.session.delete(user)
         db.session.commit()
     return (
         json.dumps(

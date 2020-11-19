@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from demo.app.user import sign_up, sign_in, update_user
+from demo.app.user import sign_up, sign_in, update_user, delete_user
 from demo.app.post import create_post, repair_post,delete
 from demo.app.tag import create_tag
 
@@ -11,7 +11,8 @@ def create_app():
 
     app.add_url_rule("/sign_up", "sign_up", sign_up, methods=["POST"])
     app.add_url_rule("/sign_in", "sign_in", sign_in, methods=["POST"])
-    app.add_url_rule("/update_user", "update_user", update_user, methods=["POST"])
+    app.add_url_rule("/delete_user", "delete_user", delete_user, methods=["DELETE"])
+    app.add_url_rule("/update_user", "update_user", update_user, methods=["PATH"])
     app.add_url_rule("/create_post", "create_post", create_post, methods=["POST"])
     app.add_url_rule("/repair_post", "repair_post", repair_post, methods=["POST"])
     app.add_url_rule("/delete_post", "delete", delete, methods=["DELETE"])
