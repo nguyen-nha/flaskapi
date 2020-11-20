@@ -36,17 +36,10 @@ def update_post():
             db.session.add(new_post)
             db.session.commit()
             return (
-            json.dumps(
+            json.dumps (
                 {
                     "message": "chinh sua thanh cong"
                 }
-                    )
-                )
-        return (
-            json.dumps(
-                    {
-                    "message": "chinh sua thanh cong"
-                    }
                     )
                 )
 
@@ -59,7 +52,7 @@ def delete_post(id):
     return (
         json.dumps(
             {
-                "message": "update thanh cong"
+                "message": "xoa thanh cong"
             }
         )
     )
