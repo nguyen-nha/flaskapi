@@ -20,7 +20,7 @@ def create_post():
         return (
              json.dumps(
             {
-            "message" : " tao thanh cong"
+            "message" : "tao thanh cong"
              }
          )
     )

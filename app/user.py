@@ -23,7 +23,6 @@ def sign_up():
             }
         )
     )
-
 def sign_in():
     if request.method == ['POST']:
         name = request.json['Name']
@@ -71,7 +70,7 @@ def delete_user(id):
     return (
         json.dumps(
             {
-                "message": "update thanh cong"
+                "message": "xoa thanh cong"
             }
         )
     )
